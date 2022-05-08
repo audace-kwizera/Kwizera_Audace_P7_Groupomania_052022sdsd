@@ -2,10 +2,18 @@
   <div class="Messages">
     <h2>Messages</h2>
 
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
+    <ul v-for="message in messages" v-bind:key="message">
+      <li>{{ message }}</li>
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      messages: ['My very', 'First', 'Message']
+    }
+  }
+}
+</script>
