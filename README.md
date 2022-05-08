@@ -9,4 +9,5 @@ Utiliser "nodemon server" pour lancer l'application
 Utiliser "yarn server" pour lancer l'application
 
 => Utilisation de axios pour récupérer les données et les afficher
-=> Utilisation d'un middleware pour fixer les erreurs liées à cors 
+=> Utilisation d'un middleware pour fixer les erreurs liées à cors
+=> Utilisation de body-parser
