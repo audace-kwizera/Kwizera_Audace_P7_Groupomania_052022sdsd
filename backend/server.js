@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 
 // Récupération des messages
 app.get('/messages', (req, res) => {
-	const messages = ['My very', 'First', 'Message', 'Now'];
+	const messages = ['My very', 'First', 'Message', 'Now', 'yes'];
 	res.send(messages);
 });
 
