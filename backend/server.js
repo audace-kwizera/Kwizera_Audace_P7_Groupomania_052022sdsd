@@ -12,21 +12,24 @@ app.use((req, res, next) => {
   next();
 });
 
-// Appel de bodyparser
-app.use(bodyParser.json())
+	// Appel de bodyparser
+	app.use(bodyParser.json())
+
+	var messages = ['La vie', 'Est', 'Très', 'Belle', 'yes'];
 
 // Récupération des messages
 app.get('/messages', (req, res) => {
-	const messages = ['My very', 'First', 'Message', 'Now', 'yes'];
 	res.send(messages);
 });
 
 // Création d'un message
 app.post('/messages', (req, res) => {
-console.log(req.body);
-res.json({});
-//	const messages = ['My very', 'First', 'Message', 'Now', 'yes'];
-//	res.send(messages);
+	let msg = req.body
+	console.log(msg);
+	// Ajouter le message
+	messages.push(msg.message)
+	res.json(msg);
+	console.log(messages)
 });
 
 
