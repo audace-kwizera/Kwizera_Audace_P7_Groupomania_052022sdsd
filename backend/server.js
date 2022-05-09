@@ -1,7 +1,10 @@
 /* Création de express */
 const express = require('express');
 const app = express();
+ // import des chemins
+require('dotenv').config({path: '.env'})
 const bodyParser = require('body-parser')
+const { Sequelize } = require('sequelize');
 const port = 3000;
 
 // Erreurs de cors
@@ -12,10 +15,24 @@ app.use((req, res, next) => {
   next();
 });
 
+
+
 	// Appel de bodyparser
 	app.use(bodyParser.json())
 
 	var messages = ['La vie', 'Est', 'Très', 'Belle', 'yes'];
+//// connection base de données
+//const sequelize = new Sequelize('groupomania', 'root', 'JESUSmylove2022$', {
+//  host: 'localhost',
+//  dialect: 'mysql'
+//});
+
+//	try {
+//    await sequelize.authenticate();
+//    console.log('Connection has been established successfully.');
+//  } catch (error) {
+//    console.error('Unable to connect to the database:', error);
+//  }
 
 // Récupération des messages
 app.get('/messages', (req, res) => {

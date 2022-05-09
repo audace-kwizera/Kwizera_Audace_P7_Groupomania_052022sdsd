@@ -3,9 +3,8 @@
     <div class="Messages">
       <h2>Poster</h2>
         <form>
-          <span>Votre message:</span>
-          <p style="white-space: pre-line;">{{ message }}</p>
-          <textarea v-model="message" placeholder="add multiple lines"></textarea>
+
+          <textarea v-model="msgBody" label='Message' required></textarea>
           <button @click="submit">Submit</button>
         </form>
     </div>
@@ -17,7 +16,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      messages: ['Un', 'Deux', 'Trois']
+      msgBody: ''
     }
   },
   async created () {
@@ -26,6 +25,11 @@ export default {
       this.messages = res.data
     } catch (error) {
       console.log(error)
+    }
+  },
+  methods: {
+    submit () {
+      console.log(this.msgBody)
     }
   }
 }
