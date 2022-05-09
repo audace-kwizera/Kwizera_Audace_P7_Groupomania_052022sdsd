@@ -1,11 +1,17 @@
 <template>
-  <div class="Messages">
-    <h2>Posts</h2>
-    <ul>
-      <li v-for="message of messages" :key="message">{{ message }}</li>
-    </ul>
+  <div>
+    <div class="Messages">
+      <h2>Poster</h2>
+        <form>
+          <span>Votre message:</span>
+          <p style="white-space: pre-line;">{{ message }}</p>
+          <textarea v-model="message" placeholder="add multiple lines"></textarea>
+          <button @click="submit">Submit</button>
+        </form>
+    </div>
   </div>
 </template>
+
 <script>
 import axios from 'axios'
 export default {
