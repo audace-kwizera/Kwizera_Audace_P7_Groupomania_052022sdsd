@@ -3,8 +3,13 @@ const express = require('express');
 const app = express();
  // import des chemins
 require('dotenv').config({path: '.env'})
-const bodyParser = require('body-parser')
-const port = 3000;
+const bodyParser = require('body-parser');
+/* Import de Api Router */
+var apiRouter = require('./apiRouter').router;
+const port = process.env.PORT;
+
+app.use(express.json());
+
 
 // Erreurs de cors
 app.use((req, res, next) => {
@@ -14,10 +19,8 @@ app.use((req, res, next) => {
   next();
 });
 
+server.use('/', apiRouter);
 
-
-	// Appel de bodyparser
-	app.use(bodyParser.json())
 
 	var messages = ['La vie', 'Est', 'Très', 'Belle', 'yes'];
 
