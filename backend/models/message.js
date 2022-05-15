@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Message.belongsTo(models.User, {
         foreignKey: {
-          alloNull: false
+          allowNull: false
         }
       })
     }
