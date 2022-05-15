@@ -3,6 +3,8 @@
 # Utilisation de Nodejs, Express pour le Backend
 Utiliser "nodemon server" pour lancer l'application
 
+# La base de données
+=> isAdmin avec valeur par défault de avec la valeur 0
 
 
 # Utilisation de Vue JS pour le Frontend
